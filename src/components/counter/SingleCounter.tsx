@@ -8,5 +8,5 @@ type Props = {
 
 export default function SingleCounter(props: Props) {
   const countPlusOne = () => props.setCount(props.count() + 1)
-  return <BaseCounter label="+1" count={props.count} setCount={countPlusOne} />
+  return <BaseCounter label="+1" setCount={countPlusOne} />
 }

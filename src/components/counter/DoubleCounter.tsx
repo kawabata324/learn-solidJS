@@ -7,5 +7,5 @@ type Props = {
 }
 export default function DoubleCounter(props: Props) {
   const countPlusTwo = () => props.setCount(props.count() + 2)
-  return <BaseCounter label="+2" count={props.count} setCount={countPlusTwo} />
+  return <BaseCounter label="+2" setCount={countPlusTwo} />
 }
