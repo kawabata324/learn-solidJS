@@ -1,11 +1,7 @@
-import { Accessor, Setter } from 'solid-js'
 import BaseCounter from '~/components/counter/BaseCounter'
+import counter from '~/store/counter'
 
-type Props = {
-  count: Accessor<number>
-  setCount: Setter<number>
-}
-export default function DoubleCounter(props: Props) {
-  const countPlusTwo = () => props.setCount(props.count() + 2)
+export default function DoubleCounter() {
+  const { countPlusTwo } = counter
   return <BaseCounter label="+2" setCount={countPlusTwo} />
 }
