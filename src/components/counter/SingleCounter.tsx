@@ -1,8 +1,12 @@
-import { createSignal } from 'solid-js'
+import { Accessor, Setter } from 'solid-js'
 import BaseCounter from '~/components/counter/BaseCounter'
 
-export default function SingleCounter() {
-  const [count, setCount] = createSignal(0)
-  const countPlusOne = () => setCount(count() + 1)
-  return <BaseCounter label="+1" count={count} setCount={countPlusOne} />
+type Props = {
+  count: Accessor<number>
+  setCount: Setter<number>
+}
+
+export default function SingleCounter(props: Props) {
+  const countPlusOne = () => props.setCount(props.count() + 1)
+  return <BaseCounter label="+1" count={props.count} setCount={countPlusOne} />
 }
