@@ -3,7 +3,11 @@
   "scripts": {
     "dev": "solid-start dev -p 8001",
     "build": "solid-start build",
-    "start": "solid-start start"
+    "start": "solid-start start",
+    "format": "prettier --check './src/**/*.{ts,tsx,json}'",
+    "format:fix": "prettier --write './src/**/*.{ts,tsx,json}'",
+    "lint": "eslint './src/**/*.{ts,tsx}'",
+    "lint:fix": "eslint --fix './src/**/*.{ts,tsx}'"
   },
   "type": "module",
   "devDependencies": {
