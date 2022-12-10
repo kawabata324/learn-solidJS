@@ -1,6 +1,6 @@
 import { A } from 'solid-start'
-import SingleCounter from '~/components/SingleCounter'
-import DoubleCounter from '~/components/DoubleCounter'
+import SingleCounter from '~/components/counter/SingleCounter'
+import DoubleCounter from '~/components/counter/DoubleCounter'
 
 export default function Home() {
   return (
