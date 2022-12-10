@@ -7,7 +7,13 @@
     "format": "prettier --check './src/**/*.{ts,tsx,json}'",
     "format:fix": "prettier --write './src/**/*.{ts,tsx,json}'",
     "lint": "eslint './src/**/*.{ts,tsx}'",
-    "lint:fix": "eslint --fix './src/**/*.{ts,tsx}'"
+    "lint:fix": "eslint --fix './src/**/*.{ts,tsx}'",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run format"
+    }
   },
   "type": "module",
   "devDependencies": {
@@ -17,6 +23,8 @@
     "eslint": "^8.29.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-solid": "^0.9.1",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
     "postcss": "^8.4.18",
     "prettier": "^2.8.1",
     "solid-start-node": "^0.2.0",
