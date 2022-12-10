@@ -10,10 +10,9 @@
     "lint:fix": "eslint --fix './src/**/*.{ts,tsx}'",
     "prepare": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint && npm run format"
-    }
+  "lint-staged": {
+    "*.{ts,tsx,json}": "prettier --check",
+    "*.{ts,tsx}": "eslint"
   },
   "type": "module",
   "devDependencies": {
