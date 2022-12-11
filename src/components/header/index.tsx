@@ -6,8 +6,8 @@ import SunIcon from '~/components/icons/SunIcon'
 export default function Header() {
   const { changeDarkTheme, changeWhiteTheme, isDarkMode } = daisyUITheme
   // Todo any型を修正
-  const switchDarkMode = (event: any) => {
-    const isLightMode: boolean = event.target.checked
+  const switchDarkMode = (target: HTMLInputElement) => {
+    const isLightMode = target.checked
     isLightMode ? changeWhiteTheme() : changeDarkTheme()
   }
   return (
@@ -22,7 +22,10 @@ export default function Header() {
           </li>
           <li>
             <label class="swap swap-rotate">
-              <input type="checkbox" onChange={(e) => switchDarkMode(e)} />
+              <input
+                type="checkbox"
+                onChange={(e) => switchDarkMode(e.target as HTMLInputElement)}
+              />
               <MoonIcon class="swap-on" />
               <SunIcon class="swap-off" />
             </label>
