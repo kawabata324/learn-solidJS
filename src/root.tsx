@@ -1,7 +1,6 @@
 // @refresh reload
 import { Suspense } from 'solid-js'
 import {
-  A,
   Body,
   ErrorBoundary,
   FileRoutes,
@@ -13,10 +12,13 @@ import {
   Title,
 } from 'solid-start'
 import './root.css'
+import Header from '~/components/header'
+import daisyUITheme from '~/store/theme'
 
 export default function Root() {
+  const { theme } = daisyUITheme
   return (
-    <Html lang="en">
+    <Html lang="en" data-theme={theme()}>
       <Head>
         <Title>SolidStart - With TailwindCSS</Title>
         <Meta charset="utf-8" />
@@ -25,10 +27,7 @@ export default function Root() {
       <Body>
         <Suspense>
           <ErrorBoundary>
-            <A class="mr-2" href="/">
-              Index
-            </A>
-            <A href="/about">About</A>
+            <Header />
             <Routes>
               <FileRoutes />
             </Routes>
