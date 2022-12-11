@@ -5,7 +5,6 @@ import SunIcon from '~/components/icons/SunIcon'
 
 export default function Header() {
   const { changeDarkTheme, changeWhiteTheme, isDarkMode } = daisyUITheme
-  // Todo any型を修正
   const switchDarkMode = (target: HTMLInputElement) => {
     const isLightMode = target.checked
     isLightMode ? changeWhiteTheme() : changeDarkTheme()
