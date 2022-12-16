@@ -3,6 +3,7 @@ import GitHubIcon from '~/components/icons/GitHubIcon'
 import MoonIcon from '~/components/icons/MoonIcon'
 import SunIcon from '~/components/icons/SunIcon'
 import { BLOG_TITLE } from '~/constants/title'
+import { A } from 'solid-start'
 
 export default function Header() {
   const { changeDarkTheme, changeWhiteTheme, isDarkMode } = daisyUITheme
@@ -13,7 +14,9 @@ export default function Header() {
   return (
     <div class="navbar bg-base-100">
       <div class="flex-1">
-        <a class="btn btn-ghost normal-case text-xl">{BLOG_TITLE}</a>
+        <A href="/" class="btn btn-ghost normal-case text-xl">
+          {BLOG_TITLE}
+        </A>
       </div>
       <div class="flex-none">
         <ul class="menu menu-horizontal px-1">

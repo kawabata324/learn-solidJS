@@ -2,6 +2,7 @@ import { onMount, Show } from 'solid-js'
 import terminal from '~/store/terminal'
 import Terminal from '~/components/terminal'
 import theme from '~/store/theme'
+import { A } from 'solid-start'
 
 export default function Home() {
   const { status, runCode } = terminal
@@ -22,7 +23,9 @@ export default function Home() {
               Make yourself at home ☕️{' '}
             </p>
             <div class="flex gap-4">
-              <button class="btn btn-primary">About me</button>
+              <A href="/about">
+                <button class="btn btn-primary">About me</button>
+              </A>
               <button class="btn btn-primary">ブログを読む</button>
             </div>
           </div>
