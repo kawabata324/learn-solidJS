@@ -6,11 +6,7 @@ import { BLOG_TITLE } from '~/constants/title'
 import { A } from 'solid-start'
 
 export default function Header() {
-  const { changeDarkTheme, changeWhiteTheme, isDarkMode } = daisyUITheme
-  const switchDarkMode = (target: HTMLInputElement) => {
-    const isLightMode = target.checked
-    isLightMode ? changeWhiteTheme() : changeDarkTheme()
-  }
+  const { isDarkMode, switchTheme } = daisyUITheme
   return (
     <div class="navbar bg-base-100">
       <div class="flex-1">
@@ -25,10 +21,7 @@ export default function Header() {
           </li>
           <li>
             <label class="swap swap-rotate">
-              <input
-                type="checkbox"
-                onChange={(e) => switchDarkMode(e.target as HTMLInputElement)}
-              />
+              <input type="checkbox" onChange={() => switchTheme()} />
               <MoonIcon class="swap-on" />
               <SunIcon class="swap-off" />
             </label>

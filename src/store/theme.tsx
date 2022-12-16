@@ -7,7 +7,10 @@ function createDaisyUITheme() {
   const changeDarkTheme = () => setTheme('dracula')
   const changeWhiteTheme = () => setTheme('lofi')
   const isDarkMode = () => theme() === 'dracula'
-  return { theme, setTheme, changeDarkTheme, changeWhiteTheme, isDarkMode }
+  const switchTheme = () => {
+    isDarkMode() ? changeWhiteTheme() : changeDarkTheme()
+  }
+  return { theme, isDarkMode, switchTheme }
 }
 
 export default createRoot(createDaisyUITheme)
